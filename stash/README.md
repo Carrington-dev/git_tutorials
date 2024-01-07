@@ -53,3 +53,18 @@ To get a more detailed diff, pass the --patch or -p flag:`
 You might come across a situation where the changes in a branch and your stash diverge, causing a conflict when you attempt to reapply the stash. A clean fix for this is to use the command `git stash branch <new_branch_name stash_id>`, which creates a new branch based on the commit the stash was created from and pops the stashed changes to it:
 
 ```git stash branch test_2 stash@{0}```
+
+## Stashing without disturbing the stash reflog
+In rare cases, you might need to create a stash while keeping the stash reference log (reflog) intact. These cases might arise when you need a script to stash as an implementation detail. This is achieved by the git stash create command; it creates a stash entry and returns its object name without pushing it to the stash reflog:
+
+```git stash create "sample stash" ```
+63a711cd3c7f8047662007490723e26ae9d4acf9
+Sometimes, you might decide to push the stash entry created via git stash create to the stash reflog:
+
+```git stash store -m "sample stash testing.." "63a711cd3c7f8047662007490723e26ae9d4acf9"```
+
+## List stash
+```git stash list```
+stash @{0}: sample stash testing..
+Conclusion
+I hope you found this article useful and learned something new. If I missed any useful options for using stash, please let me know in the comments.

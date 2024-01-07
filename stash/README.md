@@ -79,5 +79,15 @@ Sometimes, you might decide to push the stash entry created via git stash create
 ```git stash list```
 stash @{0}: sample stash testing..
 
+## Git Stash Extras
+Stash with message
+* git stash save "My Messages"
+
+Find changes done in specific stash
+* git stash show stash@{index}
+
+Apply specific stash
+* git stash apply stash@{index}
+
 ## Conclusion
 I hope you found this article useful and learned something new. If I missed any useful options for using stash, please let me know in the comments.

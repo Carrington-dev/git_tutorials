@@ -16,8 +16,24 @@ __git stash -a__ or __git stash --all__ stash untracked files and ignored files.
 see more 
 https://opensource.com/article/21/4/git-stash
 
-## To stash files
+## Retrieving stashed changes
+
+You can reapply stashed changes with the commands git stash apply and git stash pop. Both commands reapply the changes stashed in the latest stash (that is, stash@{0}). A stash reapplies the changes while pop removes the changes from the stash and reapplies them to the working copy. Popping is preferred if you don't need the stashed changes to be reapplied more than once.
+
+You can choose which stash you want to pop or apply by passing the identifier as the last argument:
 
 ```bash
-git stash 
+git stash pop stash@{1} 
 ```
+or
+```bash
+git stash apply stash@{1}
+```
+
+## Cleaning up the stash
+
+It is good practice to remove stashes that are no longer needed. You must do this manually with the following commands:
+
+* ==git stash clear== empties the stash list by removing all the stashes.
+* ==git stash drop <stash_id>== deletes a particular stash from the stash list.
+

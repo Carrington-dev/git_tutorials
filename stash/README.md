@@ -42,11 +42,11 @@ The command git stash show <stash_id> allows you to view the diff of a stash:
 
 ```git stash show stash@{1}```
 Output
-`
+```
 console/console-init/ui/.graphqlrc.yml        |   4 +-
 console/console-init/ui/generated-frontend.ts | 742 +++++++++---------
 console/console-init/ui/package.json          |   2 +-
-To get a more detailed diff, pass the --patch or -p flag:`
+To get a more detailed diff, pass the --patch or -p flag:```
 
 ## Checking out to a new branch
 

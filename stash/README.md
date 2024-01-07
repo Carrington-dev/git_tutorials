@@ -34,6 +34,6 @@ git stash apply stash@{1}
 
 It is good practice to remove stashes that are no longer needed. You must do this manually with the following commands:
 
-* ==git stash clear== empties the stash list by removing all the stashes.
-* ==git stash drop <stash_id>== deletes a particular stash from the stash list.
+* `git stash clear` empties the stash list by removing all the stashes.
+* `git stash drop <stash_id>` deletes a particular stash from the stash list.
 

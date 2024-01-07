@@ -22,8 +22,8 @@ git stash
 ```
 You can continue woorking on other problem and then later come back to this file or files
 
-`__git stash -u__` or `__git stash --include-untracked__` stash untracked files.
-`__git stash -a__` or `__git stash --all__` stash untracked files and ignored files.
+`git stash -u` or `git stash --include-untracked` stash untracked files.
+`git stash -a` or `git stash --all` stash untracked files and ignored files.
 
 see more 
 https://opensource.com/article/21/4/git-stash
@@ -81,13 +81,13 @@ stash @{0}: sample stash testing..
 
 ## Git Stash Extras
 Stash with message
-* git stash save "My Messages"
+* ```git stash save "My Messages"```
 
 Find changes done in specific stash
-* git stash show stash@{index}
+* ```git stash show stash@{index}```
 
 Apply specific stash
-* git stash apply stash@{index}
+* ```git stash apply stash@{index}```
 
 ## Conclusion
 I hope you found this article useful and learned something new. If I missed any useful options for using stash, please let me know in the comments.

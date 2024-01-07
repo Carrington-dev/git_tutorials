@@ -2,6 +2,18 @@
 
 Sometimes you have files you don't want to commit beacuase they are unifinished but you also want don't want to lose them to preserve these files you can stash them so that you can finish in later use.
 
+## How to use git stash
+Here's the sequence to follow when using git stash:
+
+* Save changes to branch A.
+* Run git stash.
+* Check out branch B.
+* Fix the bug in branch B.
+* Commit and (optionally) push to remote.
+* Check out branch A
+* Run git stash pop to get your stashed changes back.
+* Git stash stores the changes you made to the working directory locally (inside your project's .git directory; /.git/refs/stash, to be precise) and allows you to retrieve the changes when you need them. It's handy when you need to switch between contexts. It allows you to save changes that you might need at a later stage and is the fastest way to get your working directory clean while keeping changes intact.
+
 __To stash files__
 ## To stash files
 
@@ -58,8 +70,7 @@ You might come across a situation where the changes in a branch and your stash d
 ## Stashing without disturbing the stash reflog
 In rare cases, you might need to create a stash while keeping the stash reference log (reflog) intact. These cases might arise when you need a script to stash as an implementation detail. This is achieved by the git stash create command; it creates a stash entry and returns its object name without pushing it to the stash reflog:
 
-```git stash create "sample stash" ```
-63a711cd3c7f8047662007490723e26ae9d4acf9
+```git stash create "sample stash" 63a711cd3c7f8047662007490723e26ae9d4acf9```
 Sometimes, you might decide to push the stash entry created via git stash create to the stash reflog:
 
 ```git stash store -m "sample stash testing.." "63a711cd3c7f8047662007490723e26ae9d4acf9"```
